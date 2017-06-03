@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="TheAmbula.Views.MasterPage"
+			 Icon="hamburger.png"
+			 Title="Personal Organiser">
+    <ContentPage.Content Title="Menu" BackgroundColor="#e8e8e8">
+	<StackLayout VerticalOptions="FillAndExpand">
+        <StackLayout BackgroundColor="#4e342e"
+                     HeightRequest="100">
+            <Label Text="Some Text title"
+                 FontSize="20"
+                 VerticalOptions="CenterAndExpand"
+                 TextColor="White"
+                 HorizontalOptions="Center"/>
+        </StackLayout>
+                    <ListView x:Name="listView" RowHeight="60" BackgroundColor="#e8e8e8" VerticalOptions="FillAndExpand" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
