@@ -112,10 +112,13 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\profile_generic.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\reminders.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\reminders.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\todo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\todo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ambula-ad.jpg" />
   </ItemGroup>
   <Import Project="..\TheAmbula\TheAmbula.projitems" Label="Shared" Condition="Exists('..\TheAmbula\TheAmbula.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

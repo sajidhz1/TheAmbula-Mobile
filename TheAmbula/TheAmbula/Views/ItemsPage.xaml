@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TheAmbula.Views.ItemsPage"
+             xmlns:local="clr-namespace:TheAmbula;"
+             x:Class="TheAmbula.Views.ItemsPage"             
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
   <ContentPage.ToolbarItems>
@@ -20,18 +21,51 @@
 				ItemSelected="OnItemSelected">
         <ListView.ItemTemplate>
           <DataTemplate>
-            <ViewCell>
-              <StackLayout Padding="10">
-                <Label Text="{Binding Text}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemTextStyle}"
-                       FontSize="16"/>
-                <Label Text="{Binding Description}"
-                       LineBreakMode="NoWrap"
-                       Style="{DynamicResource ListItemDetailTextStyle}"
-                       FontSize="13"/>
-              </StackLayout>
-            </ViewCell>
+                      
+                        <ViewCell>
+                            <StackLayout Spacing="0" HeightRequest="200">
+                                <StackLayout.Padding>
+                                    <OnPlatform x:TypeArguments="Thickness" iOS="0" Android="0,4" WinPhone="0"/>
+                                </StackLayout.Padding>
+                                <local:CardView >
+                                    <Grid Padding="16" ColumnSpacing="16" BackgroundColor="White">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        <Image 
+                                            HorizontalOptions="FillAndExpand"
+                                            VerticalOptions="FillAndExpand"
+                                            StyleId="SponsorImage"
+                                            Aspect="AspectFit">
+                                            <Image.Source>
+                                                <UriImageSource Uri="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRSyKVTjLq0GPFdi7h9if0qeTa4K1uDvA72FO6eoVLJJ__rNuXRtw" 
+                                            CacheValidity="3" 
+                                            CachingEnabled="true"/>
+                                            </Image.Source>
+                                        </Image>
+
+                                        <StackLayout Spacing="0" Grid.Row="1"  >
+                                            <StackLayout Padding="10" >
+                                                <Label Text="{Binding Text}"
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemTextStyle}"
+                                               FontSize="16"/>
+                                                <Label Text="{Binding Description}"
+                                               LineBreakMode="NoWrap"
+                                               Style="{DynamicResource ListItemDetailTextStyle}"
+                                               FontSize="13"/>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </Grid>
+                                </local:CardView>
+                            </StackLayout>
+                        </ViewCell>
           </DataTemplate>
         </ListView.ItemTemplate>
       </ListView>

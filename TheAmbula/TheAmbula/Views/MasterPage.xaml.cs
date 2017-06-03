@@ -31,12 +31,12 @@ namespace TheAmbula.Views
                 IconSource = "slideout.png",
                 TargetType = typeof(NewItemPage)
             });
-            //masterPageItems.Add(new MasterPageItem
-            //{
-            //    Title = "Reminders",
-            //    IconSource = "reminders.png",
-            //    TargetType = typeof(ReminderPage)
-            //});
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "Items",
+                IconSource = "reminders.png",
+                TargetType = typeof(ItemsPage)
+            });
 
             listView.ItemsSource = masterPageItems;
         }
